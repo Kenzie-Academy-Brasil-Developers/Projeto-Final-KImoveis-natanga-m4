@@ -5,6 +5,7 @@ import { tUserRes } from '../interfaces/user.interfaces';
 import { createUserService } from './../services/users/createUser.service';
 import { getAllUsersService } from './../services/users/getAllUsers.service';
 import { updateUserService } from './../services/users/updateUser.service';
+import { deleteUserService } from './../services/users/deleteUser.service';
 
 export const createUserControler = async (req: Request, res: Response): Promise<Response> => {
 
@@ -31,11 +32,11 @@ export const updateUserControler = async (req: Request, res: Response): Promise<
     return res.status(200).json(updateUser)
 
 }
-// export const deleteUserControler = async (req: Request, res: Response): Promise<Response> => {
+export const deleteUserControler = async (req: Request, res: Response): Promise<Response> => {
 
-//     await destroyUserService(Number(req.params.id));
+    await deleteUserService(Number(req.params.id));
 
-//     return res.status(204).send()
+    return res.status(204).send()
 
-// }
+}
 

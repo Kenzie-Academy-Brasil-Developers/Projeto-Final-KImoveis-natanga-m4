@@ -12,13 +12,13 @@ export const createUserControler = async (req: Request, res: Response): Promise<
 
 }
 
-// export const getUserControler = async (req: Request, res: Response): Promise<Response> => {
+export const getAllUserControler = async (req: Request, res: Response): Promise<Response> => {
 
-//     const users = listUsersService()
+    const users = getAllUserService()
 
-//     return res.status(200).json(users)
+    return res.status(200).json(users)
 
-// }
+}
 
 // export const updateUserControler = async (req: Request, res: Response): Promise<Response> => {
 

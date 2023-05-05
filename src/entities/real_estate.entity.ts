@@ -2,8 +2,6 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, One
 import { Address } from "./address.entity";
 import { Category } from "./categories.entity";
 
-
-
 @Entity('real_estate')
 export class RealEstate {
     @PrimaryGeneratedColumn()
@@ -26,8 +24,9 @@ export class RealEstate {
 
     @OneToOne(() => Address)
     @JoinColumn()
-    AddressId: Address;
+    address: Address;
 
     @ManyToOne(() => Category, (category) => category.id)
-    categoryId: number;
+    @JoinColumn()
+    category: number;
 }

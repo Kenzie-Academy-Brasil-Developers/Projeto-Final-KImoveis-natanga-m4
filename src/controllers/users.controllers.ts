@@ -3,6 +3,7 @@ import { Request } from 'express';
 import { Response } from 'express';
 import { tUserRes } from '../interfaces/user.interfaces';
 import { createUserService } from './../services/users/createUser.service';
+import { getAllUsersService } from './../services/users/getAllUsers.service';
 
 export const createUserControler = async (req: Request, res: Response): Promise<Response> => {
 
@@ -14,7 +15,7 @@ export const createUserControler = async (req: Request, res: Response): Promise<
 
 export const getAllUserControler = async (req: Request, res: Response): Promise<Response> => {
 
-    const users = getAllUserService()
+    const users = getAllUsersService()
 
     return res.status(200).json(users)
 

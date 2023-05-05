@@ -14,3 +14,5 @@ export const userSchema = z.object({
 export const userSchemaRequests = userSchema.omit({ id: true });
 
 export const userSchemaResponse = userSchema.omit({ password: true });
+
+export const usersSchemaResponse = userSchemaResponse.array();

@@ -8,11 +8,11 @@ import { userSchemaResponse } from '../../schemas/user.schema';
 export const updateUserService = async (payload: tUserReq, idUser: number): Promise<tUserRes> => {
 
 
-    const moviesRepository: Repository<User> = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
-    const oldUser: User | null = await moviesRepository.findOne({ where: { id: idUser } })
+    const oldUser: User | null = await userRepository.findOne({ where: { id: idUser } })
 
-    const user: User = await moviesRepository.save({
+    const user: User = await userRepository.save({
         ...oldUser,
         ...payload
     });

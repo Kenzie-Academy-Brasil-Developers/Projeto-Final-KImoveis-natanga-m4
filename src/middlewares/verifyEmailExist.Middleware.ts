@@ -12,9 +12,9 @@ export const verifyEmailExistMiddleware = async (req: Request, res: Response, ne
     if (email) {
 
 
-        const moviesRepository: Repository<User> = AppDataSource.getRepository(User);
+        const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
-        const findUser: User | null = await moviesRepository.findOne({ where: { email: email } })
+        const findUser: User | null = await userRepository.findOne({ where: { email: email } })
 
         if (findUser) {
             throw new AppError('Email already exists', 409)

@@ -8,11 +8,11 @@ import { userSchemaResponse } from './../../schemas/user.schema';
 export const createUserService = async (payload: tUserReq): Promise<tUserRes> => {
 
 
-    const moviesRepository: Repository<User> = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
-    const user: User = moviesRepository.create(payload);
+    const user: User = userRepository.create(payload);
 
-    await moviesRepository.save(user);
+    await userRepository.save(user);
 
     const userResponse :tUserRes= userSchemaResponse.parse(user)
     

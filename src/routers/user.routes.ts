@@ -7,13 +7,14 @@ import { ensureTokenIsValidMiddleware } from './../middlewares/ensureTokenIsVali
 import { isAdminMiddleware } from './../middlewares/isAdmin.Middleware';
 import { userSchemaUpdate } from './../schemas/user.schema';
 import { confirmUser } from './../middlewares/confirmUser.middlewares';
+import { checkIfUserIdExistsMiddleware } from './../middlewares/checkIfUserIdExists.middleware';
 
 const userRoutes: Router = Router()
 
 userRoutes.post('', verifyEmailExistMiddleware, validBodyMiddleware(userSchemaRequests), createUserControler);
 userRoutes.get('', ensureTokenIsValidMiddleware, isAdminMiddleware, getAllUserControler);
-userRoutes.patch(':id', ensureTokenIsValidMiddleware, isAdminMiddleware, confirmUser, validBodyMiddleware(userSchemaUpdate), updateUserControler)
-userRoutes.delete(':id', isAdminMiddleware, deleteUserControler)
+userRoutes.patch(':id', ensureTokenIsValidMiddleware, checkIfUserIdExistsMiddleware, isAdminMiddleware, confirmUser, validBodyMiddleware(userSchemaUpdate), updateUserControler)
+userRoutes.delete(':id', checkIfUserIdExistsMiddleware, ensureTokenIsValidMiddleware, isAdminMiddleware, deleteUserControler)
 
 
 

@@ -7,9 +7,9 @@ import { usersSchemaResponse } from '../../schemas/user.schema';
 
 export const getAllUsersService = async (): Promise<tUserRes[]> => {
 
-    const moviesRepository: Repository<User> = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
-    const users: User[] = await moviesRepository.find();
+    const users: User[] = await userRepository.find();
 
     const userResponse: tUserRes[] = usersSchemaResponse.parse(users)
 

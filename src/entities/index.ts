@@ -1,5 +1,5 @@
 
-import { Address } from './addresses.entity';
+import { Address } from './address.entity';
 import { RealEstate } from './real_estate.entity';
 import { Category } from './categories.entity';
 import { User } from './user.entity';

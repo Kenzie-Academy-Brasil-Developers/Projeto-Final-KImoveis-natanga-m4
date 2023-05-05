@@ -17,7 +17,7 @@ export class User {
     admin: boolean;
 
     @Column({ type: 'varchar', length: 120 })
-    password: boolean;
+    password: string;
 
     @CreateDateColumn()
     createAt: string | Date;

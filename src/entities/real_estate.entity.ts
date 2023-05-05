@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { Address } from "./addresses.entity";
+import { Address } from "./address.entity";
 import { Category } from "./categories.entity";
 
 

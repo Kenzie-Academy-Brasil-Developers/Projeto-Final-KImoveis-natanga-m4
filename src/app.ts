@@ -6,6 +6,7 @@ import loginRoutes from "./routers/login.routes"
 import realEstateRoutes from "./routers/realEstate.routes"
 import schedulesRoutes from "./routers/schedules.routes"
 import userRoutes from "./routers/user.routes"
+import { handleErros } from "./error/handleErros.errors"
 
 
 const app = express()

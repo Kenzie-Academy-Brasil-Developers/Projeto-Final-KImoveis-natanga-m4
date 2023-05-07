@@ -1,9 +1,9 @@
 
 import { Request, Response, NextFunction } from 'express';
 import { Repository } from 'typeorm';
-import { AppDataSource } from '../data-source';
-import { User } from './../entities/user.entity';
-import { AppError } from './../error/handleErros.errors';
+import { AppDataSource } from '../../data-source';
+import { User } from './../../entities/user.entity';
+import { AppError } from './../../error/handleErros.errors';
 
 export const verifyEmailExistMiddleware = async (req: Request, res: Response, next: NextFunction) => {
 

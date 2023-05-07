@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { RealEstate } from "./real_estate.entity";
+import { RealEstate } from "./realEstate.entity";
 import { User } from "./user.entity";
 
 

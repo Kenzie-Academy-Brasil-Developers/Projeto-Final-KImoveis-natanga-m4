@@ -1,9 +1,9 @@
 
 import { Request, Response, NextFunction } from 'express';
-import { AppError } from './../error/handleErros.errors';
+import { AppError } from '../../error/handleErros.errors';
 import { Repository } from 'typeorm';
-import { User } from './../entities/user.entity';
-import { AppDataSource } from '../data-source';
+import { User } from '../../entities/user.entity';
+import { AppDataSource } from '../../data-source';
 
 export const checkIfUserIdExistsMiddleware = async (req: Request, res: Response, next: NextFunction):Promise<void>=> {
 

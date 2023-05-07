@@ -12,11 +12,11 @@ import { handleErros } from "./error/handleErros.errors"
 const app = express()
 app.use(express.json())
 
-app.use(userRoutes);
-app.use(loginRoutes);
-app.use(realEstateRoutes);
-app.use(categoriesRoutes);
-app.use(schedulesRoutes);
+app.use('/users',userRoutes);
+app.use('/login',loginRoutes);
+app.use('', realEstateRoutes);
+app.use('',categoriesRoutes);
+app.use('',schedulesRoutes);
 
 
 app.use(handleErros)

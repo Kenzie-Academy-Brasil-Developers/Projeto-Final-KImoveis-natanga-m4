@@ -8,7 +8,7 @@ export const ensureTokenIsValidMiddleware = (req: Request, res: Response, next: 
     let token = req.headers.authorization;
 
     if (!token) {
-        throw new AppError('Missing Bearer Token', 401);
+        throw new AppError('Missing bearer token', 401);
     }
 
     token = token.split(' ')[1];
@@ -19,9 +19,9 @@ export const ensureTokenIsValidMiddleware = (req: Request, res: Response, next: 
             throw new AppError(err.message, 401)
         }
 
-        req.user = {
+        res.locals.user = {
             admin: decode.admin,
-            idUser: parseInt(decode.sub),
+            idUser: decode.sub,
         }
     })
 

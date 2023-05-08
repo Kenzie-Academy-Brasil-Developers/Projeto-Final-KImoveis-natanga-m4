@@ -17,7 +17,7 @@ export const createUserControler = async (req: Request, res: Response): Promise<
 
 export const getAllUserControler = async (req: Request, res: Response): Promise<Response> => {
 
-    const users = getAllUsersService()
+    const users = await getAllUsersService()
 
     return res.status(200).json(users)
 
@@ -39,4 +39,3 @@ export const deleteUserControler = async (req: Request, res: Response): Promise<
     return res.status(204).send()
 
 }
-

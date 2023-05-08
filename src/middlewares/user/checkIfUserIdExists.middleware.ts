@@ -15,7 +15,7 @@ export const checkIfUserIdExistsMiddleware = async (req: Request, res: Response,
         const user: User | null = await userRepository.findOne({ where: { id: Number(req.params.id) } });
 
         if (!user) {
-            throw new AppError('User not found', 403)
+            throw new AppError('User not found', 404)
         }
 
     }

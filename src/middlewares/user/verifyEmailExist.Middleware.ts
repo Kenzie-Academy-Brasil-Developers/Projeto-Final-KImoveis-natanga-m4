@@ -10,7 +10,7 @@ export const verifyEmailExistMiddleware = async (req: Request, res: Response, ne
     const { email } = req.body
 
     if (email) {
-
+        
 
         const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
@@ -21,6 +21,6 @@ export const verifyEmailExistMiddleware = async (req: Request, res: Response, ne
         }
 
     }
-
+    
     next()
 }

@@ -1,7 +1,6 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 
-
 @Entity('users')
 export class User {
     @PrimaryGeneratedColumn('increment')
@@ -19,12 +18,12 @@ export class User {
     @Column({ type: 'varchar', length: 120 })
     password: string;
 
-    @CreateDateColumn()
-    createAt: string | Date;
+    @CreateDateColumn({ type: 'date' })
+    createdAt: string | Date;
 
-    @UpdateDateColumn()
-    updateAt: string | Date ;
+    @UpdateDateColumn({ type: 'date' })
+    updatedAt: string | Date;
 
-    @DeleteDateColumn()
+    @DeleteDateColumn({ type: 'date', nullable: true })
     deletedAt: string | Date | null | undefined;
 }

@@ -8,6 +8,6 @@ export const validBodyMiddleware = (schema: Schema) => (req: Request, res: Respo
     const validBody = schema.parse(req.body);
 
     req.body = validBody
-
+    
     next()
 }

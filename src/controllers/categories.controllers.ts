@@ -4,6 +4,8 @@ import { tCategory } from '../interfaces/categories.interfaces';
 import { createCategoryService } from './../services/category/createCategory.service';
 import { getAllCategorysService } from './../services/category/getAllCategorys.service';
 import { getCategoryRealEstateService } from './../services/category/getCategoryRealEstate.service';
+import { RealEstate } from './../entities/realEstate.entity';
+import { Category } from './../entities/categories.entity';
 
 export const createCategoryController = async (req: Request, res: Response): Promise<Response> => {
 
@@ -23,7 +25,7 @@ export const getAllCategoryController = async (req: Request, res: Response): Pro
 
 export const getCategoryRealEstateController = async (req: Request, res: Response): Promise<Response> => {
 
-    const Categorys = await getCategoryRealEstateService(Number(req.params.id))
+    const Categorys: Category = await getCategoryRealEstateService(Number(req.params.id))
 
     return res.status(200).json(Categorys)
 

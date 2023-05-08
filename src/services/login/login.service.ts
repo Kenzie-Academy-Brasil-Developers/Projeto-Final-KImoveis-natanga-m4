@@ -9,10 +9,6 @@ import { User } from './../../entities/user.entity';
 
 export const loginService = async (payload: tLogin): Promise<string> => {
 
-    if (!payload.email && !payload.password) {
-        throw new AppError('Invalid credentials', 400)
-    }
-
     const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     const user: User | null = await userRepository.findOne({ where: { email: payload.email } });

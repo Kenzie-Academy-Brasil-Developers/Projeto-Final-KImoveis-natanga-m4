@@ -10,10 +10,11 @@ export const categoryExistMiddlewares = async (req: Request, res: Response, next
 
     const categoryRepository: Repository<Category> = AppDataSource.getRepository(Category);
 
-    const category: Category[] = await categoryRepository.find({ where: { name: req.body.name } });
+    const category: Category | null = await categoryRepository.findOne({ where: { name: req.body.name } });
 
     if (category) {
-        throw new AppError('Category already registered', 409)
+        throw new AppError('Category already exists', 409)
     }
 
+    next()
 }

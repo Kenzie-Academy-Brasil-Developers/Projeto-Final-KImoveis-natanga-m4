@@ -17,7 +17,7 @@ export const createUserControler = async (req: Request, res: Response): Promise<
 
 export const getAllUserControler = async (req: Request, res: Response): Promise<Response> => {
 
-    const users = await getAllUsersService()
+    const users: tUserRes[] = await getAllUsersService()
 
     return res.status(200).json(users)
 
@@ -27,7 +27,7 @@ export const updateUserControler = async (req: Request, res: Response): Promise<
 
     const idUser: number = Number(req.params.id)
 
-    const updateUser = await updateUserService(req.body, idUser)
+    const updateUser: tUserRes = await updateUserService(req.body, idUser)
 
     return res.status(200).json(updateUser)
 

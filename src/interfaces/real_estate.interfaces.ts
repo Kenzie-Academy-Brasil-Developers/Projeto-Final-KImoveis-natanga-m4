@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { realEstateSchema, realEstateSchemaRequest } from "../schemas/real_estate.schema";
+import { z } from 'zod';
+import { realEstateSchema, realEstateSchemaRequest } from '../schemas/real_estate.schema';
 
 
 export type tRealState = z.infer<typeof realEstateSchema>

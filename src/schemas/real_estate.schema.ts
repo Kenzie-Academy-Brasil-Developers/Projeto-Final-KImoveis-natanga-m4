@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { addressSchemaRequest } from "./address.schemas";
+import { z } from 'zod';
+import { addressSchemaRequest } from './address.schemas';
 
 
 export const realEstateSchema = z.object({

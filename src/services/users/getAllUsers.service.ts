@@ -11,8 +11,10 @@ export const getAllUsersService = async (): Promise<tUserRes[]> => {
 
     const users: User[] = await userRepository.find();
 
+    
     const userResponse: tUserRes[] = usersSchemaResponse.parse(users)
 
     return userResponse
 
 }
+

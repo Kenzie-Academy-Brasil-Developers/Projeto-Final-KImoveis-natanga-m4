@@ -1,5 +1,5 @@
-import { hashSync } from "bcryptjs";
-import { z } from "zod";
+import { hashSync } from 'bcryptjs';
+import { z } from 'zod';
 
 export const userSchema = z.object({
     id: z.number(),

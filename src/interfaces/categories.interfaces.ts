@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 import { categorySchema, categorySchemaRequest } from '../schemas/categories.schema';
 
 

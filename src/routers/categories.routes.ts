@@ -1,7 +1,7 @@
-import { Router } from "express";
+import { Router } from 'express';
 import { validBodyMiddleware } from './../middlewares/user/validBody.Middleware';
-import { categorySchema } from "../schemas/categories.schema";
-import { getAllCategoryController, createCategoryController } from "../controllers/categories.controllers";
+import { categorySchema } from '../schemas/categories.schema';
+import { getAllCategoryController, createCategoryController } from '../controllers/categories.controllers';
 import { isAdminMiddleware } from './../middlewares/user/isAdmin.Middleware';
 import { categoryExistMiddlewares } from './../middlewares/category/categoryExist.Middlewares';
 import { getCategoryRealEstateController } from './../controllers/categories.controllers';

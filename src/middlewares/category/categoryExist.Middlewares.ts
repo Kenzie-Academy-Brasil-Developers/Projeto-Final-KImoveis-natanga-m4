@@ -13,7 +13,7 @@ export const categoryExistMiddlewares = async (req: Request, res: Response, next
     const category: Category[] = await categoryRepository.find({ where: { name: req.body.name } });
 
     if (category) {
-        throw new AppError("Category already registered", 409)
+        throw new AppError('Category already registered', 409)
     }
 
 }

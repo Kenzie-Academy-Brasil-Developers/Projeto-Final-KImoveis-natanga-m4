@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 import { loginSchema } from './../schemas/login.schemas';
 
 

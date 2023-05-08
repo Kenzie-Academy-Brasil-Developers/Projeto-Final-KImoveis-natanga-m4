@@ -1,7 +1,7 @@
-import { Repository } from "typeorm";
-import { AppDataSource } from "../../data-source";
-import { User } from "../../entities";
-import { tUserReq, tUserRes } from "../../interfaces/user.interfaces";
+import { Repository } from 'typeorm';
+import { AppDataSource } from '../../data-source';
+import { User } from '../../entities';
+import { tUserReq, tUserRes } from '../../interfaces/user.interfaces';
 import { userSchemaResponse } from './../../schemas/user.schema';
 
 

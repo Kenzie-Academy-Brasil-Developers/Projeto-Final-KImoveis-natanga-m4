@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { userSchemaRequests } from "../schemas/user.schema";
+import { Router } from 'express';
+import { userSchemaRequests } from '../schemas/user.schema';
 import { createUserControler, deleteUserControler, getAllUserControler, updateUserControler } from './../controllers/users.controllers';
 import { validBodyMiddleware } from './../middlewares/user/validBody.Middleware';
 import { verifyEmailExistMiddleware } from './../middlewares/user/verifyEmailExist.Middleware';

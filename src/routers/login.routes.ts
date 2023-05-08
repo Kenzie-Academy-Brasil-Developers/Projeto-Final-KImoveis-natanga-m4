@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router } from 'express';
 import { loginController } from './../controllers/login.controllers';
 import { validBodyMiddleware } from './../middlewares/user/validBody.Middleware';
 import { loginSchema } from './../schemas/login.schemas';

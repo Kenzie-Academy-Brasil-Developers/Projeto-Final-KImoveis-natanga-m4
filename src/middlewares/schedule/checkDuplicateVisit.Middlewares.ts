@@ -10,10 +10,14 @@ export const checkDuplicateVisitMiddlewares = async (req: Request, res: Response
 
     const scheduleRepository: Repository<Schedule> = AppDataSource.getRepository(Schedule);
 
-    const schedule: Schedule | null = await scheduleRepository.findOne({ where: { hour: req.body.hour } });
+    const schedulesQueryBuilder = scheduleRepository.createQueryBuilder('schedule')
 
-    if (schedule) {
-        throw new AppError('Schedule already exists', 409)
+    const userVisit: Schedule | null = await schedulesQueryBuilder
+        .where('schedule.hour = :hour', { hour: req.body.hour })
+        .getOne()
+
+    if (userVisit) {
+        throw new AppError('Schedule to this real estate at this date and time already exists', 409)
     }
 
     next()

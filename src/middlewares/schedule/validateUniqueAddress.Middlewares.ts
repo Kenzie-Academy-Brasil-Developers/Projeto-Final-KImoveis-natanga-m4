@@ -1,11 +1,8 @@
-
 import { Request, Response, NextFunction } from 'express';
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../data-source';
-import { Schedule } from '../../entities';
 import { AppError } from '../../error/handleErros.errors';
-import { Address } from './../../entities/address.entity';
-import { number, string } from 'zod';
+import { Address } from '../../entities/address.entity';
 
 
 export const validateUniqueAddressMiddlewares = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

@@ -1,13 +1,27 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from "../../data-source";
-import { Schedule } from '../../entities/schedules.entity';
+import { RealEstate } from './../../entities/realEstate.entity';
+import { Schedule } from './../../entities/schedules.entity';
 
-export const getAllSchedulesService = async (): Promise<Schedule[]> => {
 
-    const SchedulesRepository: Repository<Schedule> = AppDataSource.getRepository(Schedule);
+export const getAllSchedulesService = async (id: number) => {
 
-    const Schedules: Schedule[] = await SchedulesRepository.find();
+    const realEstateRepository: Repository<RealEstate> = AppDataSource.getRepository(RealEstate);
 
-    return Schedules
+    const realEstate: RealEstate | null = await realEstateRepository.findOne({
+        relations: {
+            address: true,
+            category: true,
+            schedules: {
+                user: true
+            }
+        },
+        where: {
+            id: id
+        }
+
+    });
+
+    return realEstate
 
 }

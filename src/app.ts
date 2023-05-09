@@ -16,7 +16,7 @@ app.use('/users',userRoutes);
 app.use('/login',loginRoutes);
 app.use('/realEstate', realEstateRoutes);
 app.use('/categories',categoriesRoutes);
-app.use('',schedulesRoutes);
+app.use('/schedules',schedulesRoutes);
 
 
 app.use(handleErros)

@@ -1,10 +1,8 @@
-
 import { Request, Response } from 'express';
 import { tCategory } from '../interfaces/categories.interfaces';
 import { createCategoryService } from './../services/category/createCategory.service';
 import { getAllCategorysService } from './../services/category/getAllCategorys.service';
 import { getCategoryRealEstateService } from './../services/category/getCategoryRealEstate.service';
-import { RealEstate } from './../entities/realEstate.entity';
 import { Category } from './../entities/categories.entity';
 
 export const createCategoryController = async (req: Request, res: Response): Promise<Response> => {

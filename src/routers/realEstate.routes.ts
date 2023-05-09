@@ -4,7 +4,7 @@ import { createRealEstateController, getAllRealEstateController } from './../con
 import { validBodyMiddleware } from './../middlewares/user/validBody.Middleware';
 import { realEstateSchemaRequest } from '../schemas/real_estate.schema';
 import { ensureTokenIsValidMiddleware } from './../middlewares/user/ensureTokenIsValid.Middleware';
-import { validateUniqueAddressMiddlewares } from './../middlewares/schedule/validateUniqueAddress.Middlewares';
+import { validateUniqueAddressMiddlewares } from '../middlewares/schedule/validateUniqueAddress.Middlewares';
 
 const realEstateRoutes: Router = Router()
 

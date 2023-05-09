@@ -6,5 +6,6 @@ export const isAdminMiddleware = (req: Request, res: Response, next: NextFunctio
     if (!res.locals.user.admin) {
         throw new AppError('Insufficient permission', 403)
     }
+    
     next()
 }

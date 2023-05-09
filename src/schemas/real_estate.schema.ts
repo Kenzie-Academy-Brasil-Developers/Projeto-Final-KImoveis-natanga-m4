@@ -1,22 +1,25 @@
-import { number, z } from 'zod';
-import { addressSchema, addressSchemaRequest } from './address.schemas';
+import { z } from 'zod';
+import { addressSchemaRequest, addressSchema } from './address.schemas';
 import { categorySchema } from './categories.schema';
 
 export const realEstateSchema = z.object({
     id: z.number(),
     sold: z.boolean().default(false),
-    value: z.string().or(z.number().positive()),
+    value: z.string().or(z.number()),
     size: z.number().int().positive(),
     category: categorySchema,
-    createdAt: z.string().or(z.date()),
-    updatedAt: z.string().or(z.date()),
+    address: addressSchema,
+    createdAt: z.string(),
+    updatedAt: z.string(),
 })
 
 export const realEstateSchemaRequest = realEstateSchema.omit({
     id: true,
-    sold: true,
-}).extend({
+    createdAt: true,
+    updatedAt: true,
+    category:true,
+})    .extend({
     address: addressSchemaRequest,
-    category: categorySchema,
+    categoryId: z.number(),
 })
 

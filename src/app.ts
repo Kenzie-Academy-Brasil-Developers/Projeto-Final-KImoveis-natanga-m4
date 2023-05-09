@@ -8,7 +8,6 @@ import schedulesRoutes from './routers/schedules.routes'
 import userRoutes from './routers/user.routes'
 import { handleErros } from './error/handleErros.errors'
 
-
 const app = express()
 app.use(express.json())
 
@@ -17,7 +16,6 @@ app.use('/login',loginRoutes);
 app.use('/realEstate', realEstateRoutes);
 app.use('/categories',categoriesRoutes);
 app.use('/schedules',schedulesRoutes);
-
 
 app.use(handleErros)
 

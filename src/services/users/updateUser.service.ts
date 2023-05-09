@@ -7,7 +7,6 @@ import { userSchemaResponse } from '../../schemas/user.schema';
 
 export const updateUserService = async (payload: tUserReq, idUser: number): Promise<tUserRes> => {
 
-
     const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     const oldUser: User | null = await userRepository.findOne({ where: { id: idUser } })

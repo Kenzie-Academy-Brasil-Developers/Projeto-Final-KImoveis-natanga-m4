@@ -1,4 +1,3 @@
-
 import { Request, Response, NextFunction } from 'express';
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../data-source';
@@ -11,7 +10,6 @@ export const verifyEmailExistMiddleware = async (req: Request, res: Response, ne
 
     if (email) {
         
-
         const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
         const findUser: User | null = await userRepository.findOne({ where: { email: email } })

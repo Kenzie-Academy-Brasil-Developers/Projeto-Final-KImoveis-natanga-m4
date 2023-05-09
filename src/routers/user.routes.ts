@@ -11,10 +11,21 @@ import { checkIfUserIdExistsMiddleware } from '../middlewares/user/checkIfUserId
 
 const userRoutes: Router = Router()
 
-userRoutes.post('', verifyEmailExistMiddleware, validBodyMiddleware(userSchemaRequests), createUserControler);
-userRoutes.get('', ensureTokenIsValidMiddleware, isAdminMiddleware, getAllUserControler);
-userRoutes.patch('/:id', ensureTokenIsValidMiddleware, checkIfUserIdExistsMiddleware, confirmUser, validBodyMiddleware(userSchemaUpdate), updateUserControler)
-userRoutes.delete('/:id', checkIfUserIdExistsMiddleware, ensureTokenIsValidMiddleware, isAdminMiddleware, deleteUserControler)
+userRoutes.post('', verifyEmailExistMiddleware,
+    validBodyMiddleware(userSchemaRequests),
+    createUserControler);
+userRoutes.get('', ensureTokenIsValidMiddleware,
+    isAdminMiddleware,
+    getAllUserControler);
+userRoutes.patch('/:id', ensureTokenIsValidMiddleware,
+    checkIfUserIdExistsMiddleware,
+    confirmUser,
+    validBodyMiddleware(userSchemaUpdate),
+    updateUserControler)
+userRoutes.delete('/:id', checkIfUserIdExistsMiddleware,
+    ensureTokenIsValidMiddleware,
+    isAdminMiddleware,
+    deleteUserControler)
 
 
 

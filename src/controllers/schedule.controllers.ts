@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { createdScheduleService } from './../services/schedule/createdSchedule.service';
 import { Schedule } from './../entities/schedules.entity';
 import { getAllSchedulesService } from './../services/schedule/getAllSchedules.service';
+import { RealEstate } from './../entities/realEstate.entity';
 
 export const createdSchedulesControler = async (req: Request, res: Response): Promise<Response> => {
 
@@ -13,7 +14,7 @@ export const createdSchedulesControler = async (req: Request, res: Response): Pr
 
 export const getAllschedulesControler = async (req: Request, res: Response): Promise<Response> => {
 
-    const users = await getAllSchedulesService(parseInt(req.params.id))
+    const users: RealEstate | null = await getAllSchedulesService(parseInt(req.params.id))
 
     return res.status(200).json(users)
 

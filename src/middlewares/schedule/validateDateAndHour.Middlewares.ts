@@ -1,4 +1,3 @@
-
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../../error/handleErros.errors';
 
@@ -13,12 +12,12 @@ export const validateDateAndHourMiddlewares = async (req: Request, res: Response
     }
 
     const validDate = new Date(date);
+
     const dayOfWeek = validDate.getDay();
 
     if (dayOfWeek < 1 || dayOfWeek > 5) {
         throw new AppError('Invalid date, work days are monday to friday', 400);
     }
-
 
     next()
 }

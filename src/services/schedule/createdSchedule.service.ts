@@ -4,7 +4,7 @@ import { User } from '../../entities/user.entity';
 import { tSchedules } from '../../interfaces/schedule.interfaces';
 import { Schedule } from '../../entities/schedules.entity';
 
-export const createdScheduleService = async (payload: tSchedules, userId: number) => {
+export const createdScheduleService = async (payload: tSchedules, userId: number): Promise<Schedule> => {
 
     const userRepository: Repository<User> = AppDataSource.getRepository(User);
 

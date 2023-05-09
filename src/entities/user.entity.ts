@@ -1,7 +1,5 @@
 import { getRounds, hash, hashSync } from 'bcryptjs';
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-
-
 @Entity('users')
 export class User {
     @PrimaryGeneratedColumn('increment')

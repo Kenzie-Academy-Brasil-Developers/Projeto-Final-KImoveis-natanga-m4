@@ -4,7 +4,7 @@ import { RealEstate } from './../../entities/realEstate.entity';
 import { Schedule } from './../../entities/schedules.entity';
 
 
-export const getAllSchedulesService = async (id: number) => {
+export const getAllSchedulesService = async (id: number):Promise<RealEstate | null> => {
 
     const realEstateRepository: Repository<RealEstate> = AppDataSource.getRepository(RealEstate);
 

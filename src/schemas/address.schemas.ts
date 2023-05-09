@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-
 export const addressSchema = z.object({
     id: z.number(),
     street: z.string().max(45),

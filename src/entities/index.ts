@@ -1,4 +1,3 @@
-
 import { Address } from './address.entity';
 import { RealEstate } from './realEstate.entity';
 import { Category } from './categories.entity';

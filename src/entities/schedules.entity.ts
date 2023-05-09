@@ -1,9 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { RealEstate } from './realEstate.entity';
 import { User } from './user.entity';
-
-
-
 @Entity('schedules')
 export class Schedule {
     @PrimaryGeneratedColumn('increment')

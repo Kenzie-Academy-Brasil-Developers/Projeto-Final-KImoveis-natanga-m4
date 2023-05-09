@@ -6,7 +6,7 @@ import { getAllRealEstateService } from './../services/realEstate/getAllRealEsta
 
 export const createRealEstateController = async (req: Request, res: Response): Promise<Response> => {
 
-    const newRealEstate = await createdRealEstateService(req.body);
+    const newRealEstate:RealEstate = await createdRealEstateService(req.body);
 
     return res.status(201).json(newRealEstate)
 

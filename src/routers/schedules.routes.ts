@@ -18,7 +18,10 @@ schedulesRoutes.post('', ensureTokenIsValidMiddleware,
     checkDuplicateVisitMiddlewares,
     realEstateScheduleFilterMiddlewares,
     createdSchedulesControler)
-schedulesRoutes.get('/realEstate/:id', ensureTokenIsValidMiddleware, isAdminMiddleware, realEstateScheduleFilterMiddlewares, getAllschedulesControler)
+schedulesRoutes.get('/realEstate/:id', ensureTokenIsValidMiddleware,
+    isAdminMiddleware,
+    realEstateScheduleFilterMiddlewares,
+    getAllschedulesControler)
 
 
 export default schedulesRoutes

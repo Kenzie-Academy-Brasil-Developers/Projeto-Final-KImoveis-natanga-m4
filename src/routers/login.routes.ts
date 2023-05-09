@@ -5,11 +5,6 @@ import { loginSchema } from './../schemas/login.schemas';
 
 const loginRoutes: Router = Router()
 
-
 loginRoutes.post('', validBodyMiddleware(loginSchema), loginController)
-
-
-
-
 
 export default loginRoutes

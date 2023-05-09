@@ -1,10 +1,8 @@
-
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../data-source';
 import { Category } from '../../entities/categories.entity';
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../../error/handleErros.errors';
-
 
 export const categoryExistMiddlewares = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
 

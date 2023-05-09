@@ -9,10 +9,12 @@ import { ensureTokenIsValidMiddleware } from './../middlewares/user/ensureTokenI
 
 const categoriesRoutes: Router = Router()
 
-
-categoriesRoutes.post('', validBodyMiddleware(categorySchemaRequest), categoryExistMiddlewares, ensureTokenIsValidMiddleware, isAdminMiddleware, createCategoryController)
+categoriesRoutes.post('', validBodyMiddleware(categorySchemaRequest),
+    categoryExistMiddlewares,
+    ensureTokenIsValidMiddleware,
+    isAdminMiddleware,
+    createCategoryController)
 categoriesRoutes.get('', getAllCategoryController)
 categoriesRoutes.get('/:id/realEstate', getCategoryRealEstateController)
-
 
 export default categoriesRoutes

@@ -1,5 +1,6 @@
 
 import { Request, Response } from 'express';
+import { tRealEstate } from '../interfaces/real_estate.interfaces';
 import { createdRealEstateService } from '../services/realEstate/createdRealEstate.service';
 import { RealEstate } from './../entities/realEstate.entity';
 import { getAllRealEstateService } from './../services/realEstate/getAllRealEstates.service';
@@ -7,7 +8,7 @@ import { getAllRealEstateService } from './../services/realEstate/getAllRealEsta
 
 export const createRealEstateController = async (req: Request, res: Response): Promise<Response> => {
 
-    const newRealEstate: RealEstate = await createdRealEstateService(req.body);
+    const newRealEstate = await createdRealEstateService(req.body);
 
     return res.status(201).json(newRealEstate)
 

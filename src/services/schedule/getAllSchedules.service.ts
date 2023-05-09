@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { AppDataSource } from "../../data-source";
+import { AppDataSource } from '../../data-source';
 import { RealEstate } from './../../entities/realEstate.entity';
 import { Schedule } from './../../entities/schedules.entity';
 

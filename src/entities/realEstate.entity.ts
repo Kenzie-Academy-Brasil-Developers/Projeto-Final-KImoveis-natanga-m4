@@ -17,10 +17,10 @@ export class RealEstate {
     @Column({ type: 'integer' })
     size: number;
 
-    @CreateDateColumn({ type: "date" })
+    @CreateDateColumn({ type: 'date' })
     createdAt: string | Date;
 
-    @UpdateDateColumn({ type: "date" })
+    @UpdateDateColumn({ type: 'date' })
     updatedAt: string | Date;
 
     @OneToOne(() => Address)

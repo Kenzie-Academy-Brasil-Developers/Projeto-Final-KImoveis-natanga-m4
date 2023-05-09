@@ -29,12 +29,4 @@ export const getCategoryRealEstateController = async (req: Request, res: Respons
 
 } 
 
-// }
-// export const deleteCategoryControler = async (req: Request, res: Response): Promise<Response> => {
-
-//     await deleteCategoryService(Number(req.params.id));
-
-//     return res.status(204).send()
-
-// }
 

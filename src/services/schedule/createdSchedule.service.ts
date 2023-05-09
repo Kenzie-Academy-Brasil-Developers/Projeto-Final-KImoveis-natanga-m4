@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { AppDataSource } from "../../data-source";
+import { AppDataSource } from '../../data-source';
 import { User } from '../../entities/user.entity';
 import { tSchedules } from '../../interfaces/schedule.interfaces';
 import { Schedule } from '../../entities/schedules.entity';

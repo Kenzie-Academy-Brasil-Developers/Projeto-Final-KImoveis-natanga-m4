@@ -11,7 +11,7 @@ export const validateUniqueAddressMiddlewares = async (req: Request, res: Respon
 
     const addressRepository: Repository<Address> = AppDataSource.getRepository(Address);
 
-    const number: string = address.number == undefined ? "" : String(address.number)
+    const number: string = address.number == undefined ? '' : String(address.number)
 
     const findAddress: Address | null = await addressRepository.findOne({
         where: {

@@ -1,6 +1,4 @@
-
 import { Request, Response } from 'express';
-import { tRealEstate } from '../interfaces/real_estate.interfaces';
 import { createdRealEstateService } from '../services/realEstate/createdRealEstate.service';
 import { RealEstate } from './../entities/realEstate.entity';
 import { getAllRealEstateService } from './../services/realEstate/getAllRealEstates.service';

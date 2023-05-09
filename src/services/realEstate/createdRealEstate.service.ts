@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
-import { AppDataSource } from "../../data-source";
-import {  tRealEstateReq } from "../../interfaces/real_estate.interfaces";
+import { AppDataSource } from '../../data-source';
+import {  tRealEstateReq } from '../../interfaces/real_estate.interfaces';
 import { Address } from './../../entities/address.entity';
 import { RealEstate } from './../../entities/realEstate.entity';
 import { Category } from './../../entities/categories.entity';

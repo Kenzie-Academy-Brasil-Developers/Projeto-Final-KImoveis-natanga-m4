@@ -6,20 +6,18 @@ O projeto deve ser desenvolvido em TypeScript e utilizar o TypeORM como ORM (Obj
 
 A aplicação possui os seguintes endpoints:
 
-/users: Responsável pela criação, listagem, atualização e soft delete de usuários. Não requer autenticação para criação e login, mas a listagem e atualização são restritas a administradores ou donos da conta.
-/login: Gera o token de autenticação para os usuários.
-/categories: Criação e listagem de categorias. Apenas administradores podem criar categorias.
-/realEstate: Criação e listagem de imóveis. Apenas administradores podem criar imóveis.
-/schedules: Agendamento de visitas a um imóvel e listagem de agendamentos. Apenas usuários autenticados podem agendar visitas.
+**/users:** Responsável pela criação, listagem, atualização e soft delete de usuários. Não requer autenticação para criação e login, mas a listagem e atualização são restritas a administradores ou donos da conta.
+
+**/login:** Gera o token de autenticação para os usuários.
+
+**/categories:** Criação e listagem de categorias. Apenas administradores podem criar categorias.
+
+**/realEstate:** Criação e listagem de imóveis. Apenas administradores podem criar imóveis.
+
+**/schedules:** Agendamento de visitas a um imóvel e listagem de agendamentos. Apenas usuários autenticados podem agendar visitas.
+
 As regras de validação e restrições são especificadas para cada endpoint. Por exemplo, na criação de usuários, é necessário fornecer nome, e-mail e senha, sendo que o e-mail deve ser único. Já na criação de imóveis, é necessário fornecer informações como valor, tamanho, endereço e categoria, e não podem ser cadastrados imóveis com o mesmo endereço.
 
-Os testes automatizados são fornecidos no repositório do projeto e devem ser executados ao longo do desenvolvimento para garantir o correto funcionamento das rotas. Os arquivos de teste e configuração estão disponíveis, e é necessário configurar a conexão com o banco de dados para teste e desenvolvimento.
-
-É recomendado iniciar o projeto criando as entidades corretamente e executar os testes para validar as criações das entidades antes de desenvolver as rotas. As entidades devem seguir as nomenclaturas especificadas no projeto.
-
-Ao final, o projeto deve ser capaz de realizar todas as funcionalidades descritas nos endpoints, seguindo as regras de autenticação e restrições de acesso. O uso adequado do TypeORM, Zod e PostgreSQL é essencial para o bom funcionamento da aplicação.
-
-Este resumo fornece uma visão geral do projeto KImóveis - TypeORM com Relacionamentos, destacando os principais requisitos e endpoints.
 
 ## Endpoints:
 
